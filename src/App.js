@@ -3,47 +3,46 @@ import Header from './components/Header'
 import UserActions from './components/UserActions'
 import Options from './components/Options'
 import AddOptions from './components/AddOptions'
+import OptionModal from './components/OptionModal'
+
 
 export default class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      userOptions: ['yaaa', 'yeet']
+      userOptions: ['yaaa', 'yeet'],
+      selectedOption: undefined
     }
     this.decideOption = this.decideOption.bind(this);
     this.removeAll = this.removeAll.bind(this);
     this.removeOne = this.removeOne.bind(this);
     this.addOption = this.addOption.bind(this);
+    this.decisionOkay = this.decisionOkay.bind(this);
   }
 
-  addOption(option) {
-    if (!option) {
-      return "Please add a valid option."
-    } else if (this.state.userOptions.indexOf(option) > -1) {
-      return "Option already exists."
-    }
-    this.setState((prevState) => ({
-      userOptions: prevState.userOptions.concat([option])
-    }));
+
+
+  //Render Function
+
+  render() {
+    const appSubtitle = "Let your AI overlords decide what you can't.";
+
+    return (
+      <div className="App">
+        <Header subTitle={appSubtitle} />
+        <UserActions
+          hasOptions={this.state.userOptions.length > 0}
+          decideOption={this.decideOption}
+          removeAll={this.removeAll} />
+        <Options options={this.state.userOptions} removeOne={this.removeOne} />
+        <AddOptions addOption={this.addOption} />
+        <OptionModal selectedOption={this.state.selectedOption} decisionOkay={this.decisionOkay} />
+      </div >
+    );
   }
 
-  decideOption() {
-    const chosenOption = Math.floor(Math.random() * this.state.userOptions.length);
-    alert(this.state.userOptions[chosenOption]);
-  }
-
-  removeAll() {
-    this.setState(() => ({ userOptions: [] }))
-  }
-
-  removeOne(option) {
-    console.log(option)
-    this.setState((prevState) => ({
-      userOptions: prevState.userOptions.filter(userOption => userOption !== option)
-    }));
-
-  }
+  //Component Functions
 
   componentDidMount() {
 
@@ -54,11 +53,7 @@ export default class App extends React.Component {
         this.setState((prevState) => ({ userOptions }));
         console.log("fetching data")
       }
-    } catch (err) {
-
-    }
-
-
+    } catch (err) { }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -74,22 +69,42 @@ export default class App extends React.Component {
   }
 
 
-  render() {
-    const appSubtitle = "Let your AI overlords decide what you can't.";
+  //App Functions
 
-    return (
-      <div className="App">
-        <Header subTitle={appSubtitle} />
-        <UserActions
-          hasOptions={this.state.userOptions.length > 0}
-          decideOption={this.decideOption}
-          removeAll={this.removeAll} />
-        <Options options={this.state.userOptions} removeOne={this.removeOne} />
-        <AddOptions addOption={this.addOption} />
-      </div >
-    );
+  addOption(option) {
+    if (!option) {
+      return "Please add a valid option."
+    } else if (this.state.userOptions.indexOf(option) > -1) {
+      return "Option already exists."
+    }
+    this.setState((prevState) => ({
+      userOptions: prevState.userOptions.concat([option])
+    }));
   }
 
+  decideOption() {
+    const chosenOptionIndex = Math.floor(Math.random() * this.state.userOptions.length);
+    this.setState(() => ({ selectedOption: this.state.userOptions[chosenOptionIndex] }))
+  }
+
+  removeAll() {
+    this.setState(() => ({ userOptions: [] }))
+  }
+
+  removeOne(option) {
+    console.log(option)
+    this.setState((prevState) => ({
+      userOptions: prevState.userOptions.filter(userOption => userOption !== option)
+    }));
+
+  }
+
+  decisionOkay() {
+    console.log("decision okay")
+    this.setState((prevState) => ({
+      selectedOption: undefined
+    }));
+  }
 
 }
 
