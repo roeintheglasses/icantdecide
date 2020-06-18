@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "node server/server.js",
+    "heroku-postbuild": "yarn build",
     "dev-start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
