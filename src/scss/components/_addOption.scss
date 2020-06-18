@@ -1,0 +1,44 @@
+// Add option Error
+
+.addOptionError {
+    color: $kindaWhitePurple;
+    font-style: italic;
+    margin: $m 0 0 0;
+    padding: 0 $m;
+}
+
+.addOption {
+    display: flex;
+    padding: $m;
+    flex-direction: column;
+}
+
+.addOption__input {
+    background: $kindaDarkBlue;
+    color: $kindaWhitePurple;
+    padding: $s;
+    border: none;
+    border-bottom: .3rem solid darken($kindaDarkBlue, 10%);
+    flex-grow: 1;
+    margin-bottom: $s;
+    border-radius: 5px;
+}
+
+@media (min-width:$desktopBreakpoint) {
+    .addOption {
+        flex-direction: row;
+    }
+
+    .addOption__input {
+        background: $kindaDarkBlue;
+        color: $kindaWhitePurple;
+        padding: $s;
+        border: none;
+        border-bottom: .3rem solid darken($kindaDarkBlue, 10%);
+        flex-grow: 1;
+        margin-bottom: 0;
+        margin-right: $s;
+    }
+
+
+}

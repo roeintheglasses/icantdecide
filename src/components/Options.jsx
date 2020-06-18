@@ -4,18 +4,23 @@ export default function Options(props) {
     let uniqueKey = 0
     return (
         <div>
-            {props.options.length === 0 && <p> Hey, Add some options here.</p>}
-            {props.options.length === 1 && <p> Lol Just one option. Why do you even need me ?</p>}
-            {props.options.length >= 1 && <p> Here are your {props.options.length} options</p>}
-            {props.options.map((option) => {
+            <div className="widget-header">
+                {props.options.length === 1 && <h3 className="widget-header__title"> Lol Just one option. Why do you even need me ?</h3>}
+                {props.options.length !== 1 && <h3 className="widget-header__title">Your Options</h3>}
+                <button className="button button--link" onClick={props.removeAll}>Remove All</button>
+            </div>
+            {props.options.length === 0 && <p className="widget__message"> Hey, Add some options here.</p>}
+            {props.options.map((option, index) => {
                 return (
                     <Option
                         key={uniqueKey++}
                         option={option}
                         removeOne={props.removeOne}
+                        index={index + 1}
                     />
                 )
             })}
+
         </div>
     )
 }
@@ -27,9 +32,9 @@ class Option extends React.Component {
     }
     render() {
         return (
-            <div>
-                <p>{this.props.option} <button onClick={this.removeOne} >x</button></p>
-
+            <div className="option">
+                <p className="option__text">{this.props.index}.  {this.props.option}</p>
+                <button className="button button--link" onClick={this.removeOne} >X</button>
             </div>
         )
     }

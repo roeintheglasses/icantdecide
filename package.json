@@ -1,15 +1,26 @@
 {
   "name": "icantdecide",
   "version": "0.1.0",
+  "description": "Let your AI ooverlords decide what you can't.",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roeintheglasses/icantdecide.git"
+  },
+  "author": "Hrishi Jangir",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
+    "express": "^4.17.1",
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server/server.js",
+    "dev-start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

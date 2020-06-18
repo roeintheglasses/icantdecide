@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header'
-import UserActions from './components/UserActions'
+import Footer from './components/Footer'
+import Decide from './components/Decide'
 import Options from './components/Options'
 import AddOptions from './components/AddOptions'
 import OptionModal from './components/OptionModal'
@@ -11,7 +12,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userOptions: ['yaaa', 'yeet'],
+      userOptions: [],
       selectedOption: undefined
     }
     this.decideOption = this.decideOption.bind(this);
@@ -31,12 +32,17 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <Header subTitle={appSubtitle} />
-        <UserActions
-          hasOptions={this.state.userOptions.length > 0}
-          decideOption={this.decideOption}
-          removeAll={this.removeAll} />
-        <Options options={this.state.userOptions} removeOne={this.removeOne} />
-        <AddOptions addOption={this.addOption} />
+        <div className="container">
+          <Decide
+            hasOptions={this.state.userOptions.length > 0}
+            decideOption={this.decideOption}
+          />
+          <div className="widget">
+            <Options options={this.state.userOptions} removeAll={this.removeAll} removeOne={this.removeOne} />
+            <AddOptions addOption={this.addOption} />
+          </div>
+        </div>
+        <Footer />
         <OptionModal selectedOption={this.state.selectedOption} decisionOkay={this.decisionOkay} />
       </div >
     );
@@ -74,7 +80,7 @@ export default class App extends React.Component {
   addOption(option) {
     if (!option) {
       return "Please add a valid option."
-    } else if (this.state.userOptions.indexOf(option) > -1) {
+    } else if (this.state.userOptions.includes(option)) {
       return "Option already exists."
     }
     this.setState((prevState) => ({

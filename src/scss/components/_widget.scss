@@ -1,0 +1,37 @@
+// Widget Header Section
+
+.widget-header {
+    background: $kindaBlue;
+    color: $kindaWhitePurple;
+    padding: $m;
+    display: flex;
+    justify-content: space-between;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+
+.widget-header__title {
+    margin: 0;
+}
+
+// Widget
+.widget {
+    background: $kindaLightBlue;
+    margin-bottom: $xl;
+    border-radius: 5px;
+
+}
+
+.widget__message {
+    color: $kindaWhitePurple;
+    margin: 0;
+    padding: $l;
+    text-align: center;
+    border-bottom: 1px solid lighten($kindaLightBlue, 10%);
+    font-weight: 600;
+}
+
+.widget__option {
+    color: $kindaWhitePurple;
+}

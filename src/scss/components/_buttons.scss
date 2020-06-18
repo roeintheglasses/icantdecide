@@ -1,0 +1,44 @@
+.bigButton {
+    background: $brightPurple;
+    border: none;
+    border-bottom: 0.6rem solid darken($brightPurple, 10%);
+    color: white;
+    font-weight: bold;
+    font-size: $l*(2/3);
+    width: 100%;
+    margin-bottom: $l;
+    padding: 2.4rem;
+    border-radius: 5px;
+
+
+}
+
+.bigButton:disabled {
+    opacity: .7;
+}
+
+@media (min-width:$desktopBreakpoint) {
+    .bigButton {
+        font-size: $l;
+        margin-bottom: $xl;
+    }
+}
+
+//Buttons
+
+.button {
+    background: $brightPurple;
+    border: none;
+    border-bottom: 0.3rem solid darken($brightPurple, 10%);
+    color: white;
+    font-weight: normal;
+    padding: $s;
+    border-radius: 5px;
+}
+
+.button--link {
+    background: none;
+    border: none;
+    color: $kindaWhitePurple;
+    padding: 0;
+}
