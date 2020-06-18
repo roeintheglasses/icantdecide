@@ -1,13 +1,15 @@
 import React from 'react'
 
-export default class Header extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>I Can't Decide!!</h1>
-                <h2>Let your AI overlords decide what you can't.</h2>
-            </div>
-        )
-    }
-}
+export default function Header(props) {
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            {props.subTitle && <h2>{props.subTitle}</h2>}
+        </div>
+    )
 
+
+}
+Header.defaultProps = {
+    title: `I can't decide !!`
+}
