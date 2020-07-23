@@ -1,8 +1,0 @@
-[{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-        "namespace": "android_app",
-        "package_name": "ga.icantdecide.app",
-        "sha256_cert_fingerprints": ["D1:F9:B6:FA:DF:1F:9C:B5:AF:E1:21:E9:34:E8:A5:F5:CC:79:8C:15:4E:81:4F:FC:FD:96:3A:1F:4F:AB:13:C5"]
-    }
-}]
