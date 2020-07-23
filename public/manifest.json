@@ -1,13 +1,21 @@
 {
-  "short_name": "I can't decide",
+  "short_name": "Icantdecide",
   "name": "I can't decide!",
   "icons": [{
-    "src": "favicon.ico",
+    "src": "assets/favicon.ico",
     "sizes": "64x64 32x32 24x24 16x16",
     "type": "image/x-icon"
+  }, {
+    "src": "assets/android-chrome-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "assets/android-chrome-512x512.png",
+    "sizes": "512x512",
+    "type": "image/png"
   }],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
 }
