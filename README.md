@@ -7,7 +7,6 @@
 ## A simple tool to Help you decide what you need. 
 
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/roeintheglasses/icantdecide.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/roeintheglasses/icantdecide/context:javascript)
-https://img.shields.io/badge/PWA%20-YES!-skyblue?labelColor=blue
 
 ### Development
 #### Getting Started  
