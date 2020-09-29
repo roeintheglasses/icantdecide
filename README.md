@@ -7,6 +7,7 @@
 ## A simple tool to Help you decide what you need. 
 
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/roeintheglasses/icantdecide.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/roeintheglasses/icantdecide/context:javascript)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ffb799ec-def1-4744-bf68-e958e20e6761/deploy-status)](https://app.netlify.com/sites/vigilant-cori-66e3cb/deploys)
 
 ### Development
 #### Getting Started  
